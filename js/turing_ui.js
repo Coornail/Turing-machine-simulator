@@ -2,7 +2,7 @@ $(document).ready(function() {
   bindActions();
 
   drawRules();
-  //drawSteps();
+  drawWord();
 });
 
 
@@ -26,6 +26,12 @@ function bindActions() {
     drawRules();
     return false;
   });
+
+  // Execute step
+  $('#step').click(function() {
+    TuringMachine.step();
+    drawWord();
+  });
 }
 
 
@@ -41,5 +47,14 @@ function drawRules() {
     table.find('thead').append(row);
   }
   $('#display-rules').html(table);
+}
+
+
+/**
+ * Draws the word in the #steps div
+ */
+function drawWord() {
+  var word = TuringMachine.word.substr(0, TuringMachine.position) +'<strong id="current_char">'+ TuringMachine.word[TuringMachine.position] +'</strong>'+ TuringMachine.word.substr(TuringMachine.position + 1, TuringMachine.word.length);
+  $('#steps').html(word);
 }
 
