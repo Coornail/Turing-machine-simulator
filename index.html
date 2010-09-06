@@ -8,7 +8,26 @@
     <script src="js/turing_ui.js"></script>
   </head>
   <body>
-  <div id="rules"></div>
+    <div id="rules">
+      <form id="add-rule">
+        <label for="rule_read_state">Input state</label>
+        <input type="text" name="rule_read_state" size="3" />
+        <label for="rule_read_char">Input character</label>
+        <input type="text" name="rule_read_char" size="1" />
+        <label for="rule_write_state">Output state</label>
+        <input type="text" name="rule_write_state" size="3" />
+        <label for="rule_write_char">Output character</label>
+        <input type="text" name="rule_write_char" size="1" />
+        <label for="rule_direction">Direction</label>
+        <select name="rule_direction">
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="stay">Stay</option>
+        </select>
+        <input type="submit" value="Add" />
+      </form>
+      <div id="display-rules" />
+    </div>
   <div id="steps"></div>
   </body>
 
