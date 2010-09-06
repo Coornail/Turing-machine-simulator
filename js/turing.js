@@ -60,6 +60,13 @@ TuringMachine.step = function() {
     var word = this.word.substr(0, this.position) + rule.write_char + this.word.substr(this.position + 1, this.word.length);
     this.word = word;
     this.state = rule.write_state;
+
+    if (rule.direction == 'left') {
+      this.position--;
+    } else if(rule.direction == 'right') {
+      this.position++;
+    }
+
   } else {
     TuringMachine.halt = true;
   }
