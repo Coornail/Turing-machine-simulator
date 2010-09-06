@@ -5,7 +5,7 @@ var TuringMachine = TuringMachine || {
   /* Variables */
   'position' : 1, // Position of the reading head, internal, don't modify
   'state': 'q0', // current state
-  'word' : '>aB', // current word
+  'word' : '>aaaaaaaaaaaaB', // current word
   'rules': [],    // set of rules, use addRule()!
   'states': [], 
   'halt': false, // error in the machine
