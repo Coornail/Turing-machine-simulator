@@ -36,7 +36,7 @@ function bindActions() {
 
 
 /**
- * Writing rules to the #rules div
+ * Write rules to the #rules div
  */
 function drawRules() {
   // clear table
@@ -51,7 +51,7 @@ function drawRules() {
 
 
 /**
- * Draws the word in the #steps div
+ * Draw the word in the #steps div
  */
 function drawWord() {
   var word = TuringMachine.word.substr(0, TuringMachine.position) +'<strong id="current_char">'+ TuringMachine.word[TuringMachine.position] +'</strong>'+ TuringMachine.word.substr(TuringMachine.position + 1, TuringMachine.word.length);
