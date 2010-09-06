@@ -6,30 +6,35 @@
     <script src="js/jquery.js"></script>
     <script src="js/turing.js"></script>
     <script src="js/turing_ui.js"></script>
+    <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Oldstyle" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
   <body>
+    <h1>Turing Machine emulator</h1>
     <div id="rules">
       <form id="add-rule">
         <label for="rule_read_state">Input state</label>
-        <input type="text" name="rule_read_state" size="3" />
+        <input type="text" name="rule_read_state" size="3" /> <br />
         <label for="rule_read_char">Input character</label>
-        <input type="text" name="rule_read_char" size="1" />
+        <input type="text" name="rule_read_char" size="1" /><br />
         <label for="rule_write_state">Output state</label>
-        <input type="text" name="rule_write_state" size="3" />
+        <input type="text" name="rule_write_state" size="3" /><br />
         <label for="rule_write_char">Output character</label>
-        <input type="text" name="rule_write_char" size="1" />
+        <input type="text" name="rule_write_char" size="1" /><br />
         <label for="rule_direction">Direction</label>
         <select name="rule_direction">
           <option value="left">Left</option>
           <option value="right">Right</option>
           <option value="stay">Stay</option>
-        </select>
+        </select> <br />
         <input type="submit" value="Add" />
       </form>
-      <div id="display-rules" />
     </div>
+    <div id="display-rules" ></div>
+  <hr />
   <div id="steps"></div>
   <button type="step" id="step">Step</button>
+  <div id="bottom">by Kornel Lugosi</div>
   </body>
 
 </html>
