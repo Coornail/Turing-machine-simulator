@@ -6,6 +6,7 @@ $(document).ready(function() {
   bindActions();
   drawRules();
   drawWord();
+  drawState();
 });
 
 
@@ -34,6 +35,7 @@ function bindActions() {
   $('#step').click(function() {
     TuringMachine.step();
     drawWord();
+    drawState();
   });
 }
 
@@ -59,5 +61,14 @@ function drawRules() {
 function drawWord() {
   var word = TuringMachine.word.substr(0, TuringMachine.position) +'<strong id="current_char">'+ TuringMachine.word[TuringMachine.position] +'</strong>'+ TuringMachine.word.substr(TuringMachine.position + 1, TuringMachine.word.length);
   $('#steps').html(word);
+}
+
+
+/**
+ * Draw the state in #state div
+ */
+function drawState() {
+  var state = TuringMachine.state;
+  $('#state').html('<strong>State:</strong> '+ state);
 }
 
