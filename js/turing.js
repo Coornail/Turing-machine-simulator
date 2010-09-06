@@ -3,22 +3,31 @@
  */
 var TuringMachine = TuringMachine || {
   /* Variables */
-  'position' : 1,
-  'state': 'q0',
-  'word' : '>aB',
-  'rules': [],
-  'states': [],
+  'position' : 1, // Position of the reading head, internal, don't modify
+  'state': 'q0', // current state
+  'word' : '>aB', // current word
+  'rules': [],    // set of rules, use addRule()!
+  'states': [], 
   'halt': false, // error in the machine
 };
 
+
+/**
+ * Sets the currently reading word
+ * Use only for initialization, or be careful!
+ */
 TuringMachine.setWord = function(word) {
   this.word = word;
   return word;
 }
 
+/**
+ * @return current word
+ */
 TuringMachine.getWord = function() {
   return this.word;
 };
+
 
 /**
  * Adds a rule to the ruleset.
@@ -36,6 +45,11 @@ TuringMachine.addRule = function(rule) {
   this.rules.push(rule);
 };
 
+
+/**
+ * Executes a turing machine step
+ * It is possible that after the step, the machine got into a final or error state. The caller must check.
+ */
 TuringMachine.step = function() {
   var read_char = this.word[this.position];
   rule = TuringMachine.findRule(this.state, read_char);
@@ -49,6 +63,7 @@ TuringMachine.step = function() {
     TuringMachine.halt = true;
   }
 };
+
 
 /**
  * Finds the first rule object for a state and a char
