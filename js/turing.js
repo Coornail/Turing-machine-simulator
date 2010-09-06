@@ -42,7 +42,9 @@ TuringMachine.step = function() {
   
   /** Executing rule **/
   if (rule) {
-    this.word[this.position] = rule.write_char;
+    // @todo make it nicer
+    var word = this.word.substr(0, this.position) + rule.write_char + this.word.substr(this.position + 1, this.word.length);
+    this.word = word;
   } else {
     TuringMachine.halt = true;
   }
@@ -53,9 +55,9 @@ TuringMachine.step = function() {
  * If there is no such rule, it returns false
  */
 TuringMachine.findRule = function(state, read_char) {
-  for (var rule in this.rules) {
-    console.log(this.rules);
-    if (rule.state == state && rule.read_char == read_char) {
+  for (var index in this.rules) {
+    rule = this.rules[index];
+    if (rule.read_state == state && rule.read_char == read_char) {
       return rule;
     }
   }
