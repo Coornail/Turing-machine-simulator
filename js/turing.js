@@ -1,8 +1,9 @@
 /**
- * 
+ * Author: Kornel Lugosi
+ *
+ * This is a library implements an abstract turing machine.
  */
 var TuringMachine = TuringMachine || {
-  /* Variables */
   'position' : 1, // Position of the reading head, internal, don't modify
   'state': 'q0', // current state
   'word' : '>aaaaaaaaaaaaB', // current word
@@ -40,6 +41,7 @@ TuringMachine.getWord = function() {
  *   'write_char': A character that's going to be written by the head,
  *   'direction' : One of the following: 'left', 'right', 'stay'
  * }
+ * @todo check for conflicting/stupid rules
  */
 TuringMachine.addRule = function(rule) {
   this.rules.push(rule);
