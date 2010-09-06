@@ -65,17 +65,3 @@ TuringMachine.findRule = function(state, read_char) {
   return false;
 };
 
-console.log(TuringMachine.getWord());
-
-
-TuringMachine.addRule({
-  'read_state' : 'q0',
-  'read_char' : 'a',
-  'write_state' : 'q',
-  'write_char' : 'b',
-  'direction' : 'stay',
-});
-
-console.log(TuringMachine.getWord());
-TuringMachine.step();
-console.log(TuringMachine.getWord());
