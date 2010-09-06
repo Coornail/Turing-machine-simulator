@@ -1,6 +1,9 @@
+/**
+ * User interface for the turing machine
+ */
+
 $(document).ready(function() {
   bindActions();
-
   drawRules();
   drawWord();
 });
