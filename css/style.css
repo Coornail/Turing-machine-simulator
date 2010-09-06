@@ -1,0 +1,36 @@
+
+
+#display-rules table,
+#rules {
+  float: left;
+}
+
+#rules {
+  width: 200px;
+}
+
+#display-rules table {
+  width: 580px;
+  border: 1px solid black;
+  border-spacing: 0;
+}
+
+#display-rules table th {
+  background: #ffffd0;
+  border-bottom: 1px solid #ccccc5;
+}
+
+#display-rules table td,
+#display-rules table th {
+  padding: 5px;
+}
+
+#display-rules table td {
+  border-bottom: 1px solid #ccccc5;
+  border-right: 1px solid #ccccc5;
+}
+
+hr {
+  height: 2px;
+  border-bottom: 1px solid #ccccc5;
+}
