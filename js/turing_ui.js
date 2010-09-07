@@ -48,6 +48,23 @@ function bindActions() {
       minWidth: 960,
     });
   });
+
+  // Import rules button
+  $('#import-rules').click(function() {
+    var form = $('<form><textarea name="import-rules-text" id="import-rules-text" cols="100" rows="5" /></form>');
+    form.dialog({
+      title: 'Rules | Paste the serialized rules',
+      modal: true,
+      minWidth: 960,
+      buttons: {
+        'Import': function() {
+          TuringMachine.rules = JSON.parse($('#import-rules-text').val());
+          drawRules();
+          $(this).dialog("close");
+        }
+      }
+    });
+  });
 }
 
 
