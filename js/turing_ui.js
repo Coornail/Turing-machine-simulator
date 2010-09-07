@@ -79,8 +79,7 @@ function bindActions() {
       if (event.keyCode == '13') {
         event.preventDefault();
         TuringMachine.word = $('#word-change').val();
-        TuringMachine.position = 1;
-        TuringMachine.state = 'q0';
+        TuringMachine.reset();
         drawWord();
         drawState();
         $('#word-change').remove();

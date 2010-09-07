@@ -90,3 +90,12 @@ TuringMachine.findRule = function(state, read_char) {
   return false;
 };
 
+
+/**
+ * "Rerolls" the machine to a consistent starting state, without changing the input word
+ */
+TuringMachine.reset = function() {
+  this.position = 1;
+  this.state = 'q0';
+}
+
