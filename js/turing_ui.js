@@ -19,6 +19,39 @@ function drawUi() {
 
 
 /**
+ * Write rules to the #rules div
+ */
+function drawRules() {
+  // clear table
+  var table = $('<table><thead><tr><th>Current state</th><th>Tape symbol</th><th>Result state</th><th>Print symbol</th><th>Tape-motion</th></tr></thead><tbody/></table>');
+  for (var index in TuringMachine.rules) {
+    rule = TuringMachine.rules[index];
+    var row = $('<tr><td>'+ rule.read_state +'</td><td>'+ rule.read_char +'</td><td>'+ rule.write_state +'</td><td>'+ rule.write_char +'</td><td>'+ rule.direction +'</td></tr>');
+    table.find('thead').append(row);
+  }
+  $('#display-rules').html(table);
+}
+
+
+/**
+ * Draw the word in the #steps div
+ */
+function drawWord() {
+  var word = TuringMachine.word.substr(0, TuringMachine.position) +'<strong id="current_char">'+ TuringMachine.word[TuringMachine.position] +'</strong>'+ TuringMachine.word.substr(TuringMachine.position + 1, TuringMachine.word.length);
+  $('#steps').html(word);
+}
+
+
+/**
+ * Draw the state in #state div
+ */
+function drawState() {
+  var state = TuringMachine.state;
+  $('#state').html('<strong>State:</strong> '+ state);
+}
+
+
+/**
  * Bind actions to events
  */
 function bindActions() {
@@ -99,38 +132,5 @@ function bindActions() {
     });
   });
 
-}
-
-
-/**
- * Write rules to the #rules div
- */
-function drawRules() {
-  // clear table
-  var table = $('<table><thead><tr><th>Current state</th><th>Tape symbol</th><th>Result state</th><th>Print symbol</th><th>Tape-motion</th></tr></thead><tbody/></table>');
-  for (var index in TuringMachine.rules) {
-    rule = TuringMachine.rules[index];
-    var row = $('<tr><td>'+ rule.read_state +'</td><td>'+ rule.read_char +'</td><td>'+ rule.write_state +'</td><td>'+ rule.write_char +'</td><td>'+ rule.direction +'</td></tr>');
-    table.find('thead').append(row);
-  }
-  $('#display-rules').html(table);
-}
-
-
-/**
- * Draw the word in the #steps div
- */
-function drawWord() {
-  var word = TuringMachine.word.substr(0, TuringMachine.position) +'<strong id="current_char">'+ TuringMachine.word[TuringMachine.position] +'</strong>'+ TuringMachine.word.substr(TuringMachine.position + 1, TuringMachine.word.length);
-  $('#steps').html(word);
-}
-
-
-/**
- * Draw the state in #state div
- */
-function drawState() {
-  var state = TuringMachine.state;
-  $('#state').html('<strong>State:</strong> '+ state);
 }
 
