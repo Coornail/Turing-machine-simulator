@@ -66,6 +66,10 @@ TuringMachine.step = function() {
     if (rule.direction == 'left') {
       this.position--;
     } else if(rule.direction == 'right') {
+      // Add blank
+      if (this.position == this.word.length-1) {
+        this.word += 'B';
+      }
       this.position++;
     }
 
