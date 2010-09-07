@@ -4,10 +4,18 @@
 
 $(document).ready(function() {
   bindActions();
+  drawUi();
+});
+
+
+/**
+ * (re)draws every ui element
+ */
+function drawUi() {
   drawRules();
   drawWord();
   drawState();
-});
+}
 
 
 /**
@@ -34,15 +42,13 @@ function bindActions() {
   // Step button
   $('#step').click(function() {
     TuringMachine.step();
-    drawWord();
-    drawState();
+    drawUi();
   });
 
   // Reset button
   $('#reset').click(function() {
     TuringMachine.reset();
-    drawWord();
-    drawState();
+    drawUi();
   });
 
   // Export rules button
@@ -87,9 +93,8 @@ function bindActions() {
         event.preventDefault();
         TuringMachine.word = $('#word-change').val();
         TuringMachine.reset();
-        drawWord();
-        drawState();
         $('#word-change').remove();
+        drawUi();
       }
     });
   });
