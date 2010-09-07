@@ -31,9 +31,16 @@ function bindActions() {
     return false;
   });
 
-  // Execute step
+  // Step button
   $('#step').click(function() {
     TuringMachine.step();
+    drawWord();
+    drawState();
+  });
+
+  // Reset button
+  $('#reset').click(function() {
+    TuringMachine.reset();
     drawWord();
     drawState();
   });
@@ -87,11 +94,6 @@ function bindActions() {
     });
   });
 
-  $('#reset').click(function() {
-    TuringMachine.reset();
-    drawWord();
-    drawState();
-  });
 }
 
 
