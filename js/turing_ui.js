@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 
 /**
- * Bind events to actions
+ * Bind actions to events
  */
 function bindActions() {
   // Form submit handler for adding rules
