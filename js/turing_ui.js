@@ -37,6 +37,17 @@ function bindActions() {
     drawWord();
     drawState();
   });
+
+  // Export rules button
+  $('#export-rules').click(function() {
+    var serialized_rules = JSON.stringify(TuringMachine.rules);
+    var json_text = $('<p>'+ serialized_rules  +'</p>');
+    json_text.dialog({
+      title: 'Rules | Copy and save them',
+      modal: true,
+      minWidth: 960,
+    });
+  });
 }
 
 
