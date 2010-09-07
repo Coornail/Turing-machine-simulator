@@ -66,6 +66,25 @@ function bindActions() {
       }
     });
   });
+
+  // Word change
+  $('#steps').click(function() {
+    var wordform = '<form><input type="textfield" value="'+ TuringMachine.word +'" id="word-change" /></form>';
+    $('#steps').html('');
+    $('#steps').after(wordform);
+    $('#word-change').focus();
+    $('#word-change').select();
+
+    $('#word-change').keypress(function(event) {
+      if (event.keyCode == '13') {
+        event.preventDefault();
+        TuringMachine.word = $('#word-change').val();
+        TuringMachine.step = 1;
+        drawWord();
+        $('#word-change').remove();
+      }
+    });
+  });
 }
 
 
