@@ -41,12 +41,13 @@ function bindActions() {
   // Export rules button
   $('#export-rules').click(function() {
     var serialized_rules = JSON.stringify(TuringMachine.rules);
-    var json_text = $('<p>'+ serialized_rules  +'</p>');
+    var json_text = $('<textarea id="export-dialog" cols="100" rows="5">'+ serialized_rules  +'</textarea>');
     json_text.dialog({
       title: 'Rules | Copy and save them',
       modal: true,
       minWidth: 960,
     });
+    $('#export-dialog').select();
   });
 
   // Import rules button
