@@ -86,6 +86,12 @@ function bindActions() {
       }
     });
   });
+
+  $('#reset').click(function() {
+    TuringMachine.reset();
+    drawWord();
+    drawState();
+  });
 }
 
 
