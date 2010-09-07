@@ -44,9 +44,9 @@ hr {
   background-image: -moz-linear-gradient(top, #e5e5e5, #b2b2b2); /* FireFox 3.6 */
   background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #b2b2b2),color-stop(1, #e5e5e5))    ;
   /* Safari4+, Chrome */
-  -moz-border-radius: 10px; /* FireFox 1+ */
-  -webkit-border-radius: 10px; /* Safari 3+, Chrome */
-   border-radius: 10px; /* Opera 10.5, IE 9 */
+  -moz-border-radius: 4px; /* FireFox 1+ */
+  -webkit-border-radius: 4px; /* Safari 3+, Chrome */
+   border-radius: 4px; /* Opera 10.5, IE 9 */
   -webkit-box-shadow:-2px 2px 2px rgba(0, 0, 0, 0.5); /* Safari3.0+, Chrome */
   -moz-box-shadow:-2px 2px 2px rgba(0, 0, 0, 0.5); /* Firefox F3.5+ */
   box-shadow:-2px 2px 2px rgba(0, 0, 0, 0.5); /* Opera 10.5, IE 9.0 */
