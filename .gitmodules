@@ -1,3 +1,6 @@
 [submodule "js/jquery_ui"]
 	path = js/jquery_ui
 	url = http://github.com/jquery/jquery-ui.git
+[submodule "js/json-serialization"]
+	path = js/json-serialization
+	url = http://github.com/findchris/json-serialization.js.git
