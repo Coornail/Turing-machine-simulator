@@ -31,6 +31,7 @@ function drawRules() {
   }
   $('#display-rules').html(table);
   if (TuringMachine.last_executed_rule != -1) {
+    $('.last-active').removeClass('last-active');
     $('#rules tr#rule-'+ TuringMachine.last_executed_rule).addClass('last-active');
   }
 }
