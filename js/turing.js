@@ -8,8 +8,9 @@ var TuringMachine = TuringMachine || {
   'state': 'q0', // current state
   'word' : '>aaaaaaaaaaaaB', // current word
   'rules': [],    // set of rules, use addRule()!
-  'states': [], 
+  'states': [],
   'halt': false, // error in the machine
+  'last_executed_rule': -1,
 };
 
 
@@ -55,9 +56,10 @@ TuringMachine.addRule = function(rule) {
 TuringMachine.step = function() {
   var read_char = this.word[this.position];
   rule = TuringMachine.findRule(this.state, read_char);
-  
+
   /** Executing rule **/
   if (rule) {
+    this.saveStep(rule);
     // @todo make it nicer
     var word = this.word.substr(0, this.position) + rule.write_char + this.word.substr(this.position + 1, this.word.length);
     this.word = word;
@@ -77,6 +79,15 @@ TuringMachine.step = function() {
     TuringMachine.halt = true;
   }
 };
+
+
+/**
+ * Saves the rules index to last_executed_rule
+ */
+TuringMachine.saveStep = function(rule) {
+  index = this.rules.indexOf(rule);
+  this.last_executed_rule = index;
+}
 
 
 /**
