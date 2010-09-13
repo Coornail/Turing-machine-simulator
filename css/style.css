@@ -58,3 +58,7 @@ hr {
   cursor: hand;
 }
 
+
+.last-active {
+  background-color: #ffa;
+}
