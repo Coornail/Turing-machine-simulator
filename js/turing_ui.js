@@ -78,8 +78,17 @@ function bindActions() {
 
   // Step button
   $('#step').click(function() {
-    TuringMachine.step();
-    drawUi();
+    step = TuringMachine.step();
+    if (step) {
+      drawUi();
+    } else {
+      message = $('<div id="error">No such rule!</div>');
+      message.dialog({
+        title: 'Error!',
+        modal: true,
+        minWidth: 960,
+      });
+    }
   });
 
   // Reset button
