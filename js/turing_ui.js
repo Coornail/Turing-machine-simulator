@@ -69,10 +69,10 @@ function bindActions() {
       'write_char': $('input[name=rule_write_char]').val(),
       'direction' : $('select[name=rule_direction]').val(),
     };
-    TuringMachine.addRule(rule);
 
-    //refresh rules
+    TuringMachine.addRule(rule);
     drawRules();
+
     return false;
   });
 
