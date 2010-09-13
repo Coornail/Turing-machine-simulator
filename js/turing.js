@@ -52,7 +52,7 @@ TuringMachine.addRule = function(rule) {
 /**
  * Executes a turing machine step
  * It is possible that after the step, the machine got into a final or error state. The caller must check.
- * @return On successfull stepping, it returns the rule, else false
+ * @return On successful stepping, it returns the rule, else false
  */
 TuringMachine.step = function() {
   var read_char = this.word[this.position];
