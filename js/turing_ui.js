@@ -26,7 +26,7 @@ function drawRules() {
   var table = $('<table><thead><tr><th>Current state</th><th>Tape symbol</th><th>Result state</th><th>Print symbol</th><th>Tape-motion</th></tr></thead><tbody/></table>');
   for (var index in TuringMachine.rules) {
     rule = TuringMachine.rules[index];
-    var row = $('<tr><td>'+ rule.read_state +'</td><td>'+ rule.read_char +'</td><td>'+ rule.write_state +'</td><td>'+ rule.write_char +'</td><td>'+ rule.direction +'</td></tr>');
+    var row = $('<tr id="'+ index +'"><td>'+ rule.read_state +'</td><td>'+ rule.read_char +'</td><td>'+ rule.write_state +'</td><td>'+ rule.write_char +'</td><td>'+ rule.direction +'</td></tr>');
     table.find('thead').append(row);
   }
   $('#display-rules').html(table);
