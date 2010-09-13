@@ -12,7 +12,6 @@ git submodule update
 
 Todo:
 * Check for duplicate rules
-* Indicate the rule that is executed
 * Show steps in a "history" view
 * Auto stepping
 * Description
