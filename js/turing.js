@@ -42,10 +42,28 @@ TuringMachine.getWord = function() {
  *   'write_char': A character that's going to be written by the head,
  *   'direction' : One of the following: 'left', 'right', 'stay'
  * }
- * @todo check for conflicting/stupid rules
+ * Please note that the rules are only considered the same if every parameter
+ * is the same, so according to the rules, the machine can be
+ * non-deterministic.
+ *
+ * @return The turing machine
  */
-TuringMachine.addRule = function(rule) {
-  this.rules.push(rule);
+TuringMachine.addRule = function(new_rule) {
+
+  // Check for duplicate rule
+  for (var index in this.rules) {
+    rule = this.rules[index];
+    if (rule.read_state == new_rule.read_state &&
+        rule.read_char  == new_rule.read_char &&
+        rule.write_state == new_rule.write_state &&
+        rule.write_char == new_rule.write_char &&
+        rule.direction  == new_rule.direction) {
+      return this;
+    }
+  }
+
+  this.rules.push(new_rule);
+  return this;
 };
 
 

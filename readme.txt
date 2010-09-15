@@ -11,7 +11,6 @@ git submodule init
 git submodule update
 
 Todo:
-* Check for duplicate rules
 * Show steps in a "history" view
 * Auto stepping
 * Description
